@@ -9,7 +9,7 @@
 import Foundation
 
 public class Point {
-    var x, y: Double
+    public var x, y: Double
     
     public init(x: Double, y: Double) {
         self.x = x
