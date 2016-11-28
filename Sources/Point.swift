@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Point {
+public class Point {
     var x, y: Double
     
     public init(x: Double, y: Double) {

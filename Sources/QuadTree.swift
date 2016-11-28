@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct QuadTree<T: TreeItem> {
+public class QuadTree<T: TreeItem> {
     private var bounds: Bounds
     private var root: QuadTreeChild<T>
     private(set) public var count: Int = 0
@@ -23,7 +23,7 @@ public struct QuadTree<T: TreeItem> {
         }
     }
     
-    public mutating func add(_ item: T) -> Bool {
+    public func add(_ item: T) -> Bool {
         let point = item.point
         if point.x > bounds.maxX || point.x < bounds.minX || point.y > bounds.maxY || point.y < bounds.minY {
             return false
@@ -36,7 +36,7 @@ public struct QuadTree<T: TreeItem> {
         return true
     }
     
-    public mutating func remove(_ item: T) -> Bool {
+    public func remove(_ item: T) -> Bool {
         let point = item.point
         if point.x > bounds.maxX || point.x < bounds.minX || point.y > bounds.maxY || point.y < bounds.minY {
             return false
@@ -50,7 +50,7 @@ public struct QuadTree<T: TreeItem> {
         return removed
     }
     
-    public mutating func clear() {
+    public func clear() {
         root = QuadTreeChild<T>()
         count = 0
     }
