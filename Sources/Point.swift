@@ -15,6 +15,10 @@ public struct Point {
         self.x = x
         self.y = y
     }
+    
+    public func inBounds(bounds: Bounds) -> Bool {
+        return x >= bounds.minX && x <= bounds.maxX && y >= bounds.minY && y <= bounds.maxY
+    }
 }
 
 extension Point: Equatable {}
